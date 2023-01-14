@@ -1,0 +1,52 @@
+<nav class="fh5co-nav" role="navigation" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <div class="container">
+        <div class="top-menu">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div id="fh5co-logo"><a href="index.html">TimeNow<span>.</span></a></div>
+                </div>
+
+                <div class="col-sm-7 text-center menu-1">
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="search">Search</a>
+                        </li>
+                        <li sec:authorize="isAuthenticated()">
+                            <a href="routes">Routes</a>
+                        </li>
+                        <li sec:authorize="isAuthenticated()">
+                            <a href="locations">Location</a>
+                        </li>
+                        <li sec:authorize="isAuthenticated()">
+                            <a href="municipalities">Municipality</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="col-sm-3 text-right menu-1">
+
+                    <ul sec:authorize="isAnonymous()">
+                        <a href="login"> LogIn </a>
+                    </ul >
+                    <ul sec:authorize="isAnonymous()">
+                        <a href="register"> Register </a>
+                    </ul>
+                    <ul sec:authorize="isAuthenticated()">
+                        <a href="logout"> LogOut </a>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</nav>
+<hr class="bg-danger border-2 border-top border-danger">
+
+
+
+

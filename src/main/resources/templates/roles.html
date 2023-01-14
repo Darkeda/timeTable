@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" >
+  <title>Create Role </title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display" rel="stylesheet">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/flexslider.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/modernizr-2.6.2.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/sticky-kit.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+<div th:insert="navbar"></div>
+<div  style="padding-top: 2em;" class="container text-center">
+  <div>
+    <h1>Role Creation</h1>
+  </div>
+
+
+  <form >
+    <div class="m-3">
+      <div class="form-group row">
+        <label class="col-4 col-form-label">Role Name: </label>
+        <div class="col-8">
+          <input type="text" id="role" class="form-control" required />
+        </div>
+      </div>
+      <div>
+        <button onclick="RegisterRole()" type="button" class="btn btn-primary">Create Role</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+  function RegisterRole(){
+     var role = document.getElementById('role').value;
+
+      $.ajax({
+        url: "http://localhost:8081/role/add/"+role,
+        method: "POST",
+        crossDomain: true,
+        success: function() {
+
+          window.location = "/register";
+
+        }
+    });
+
+}
+
+</script>
+</body>
+</html>
